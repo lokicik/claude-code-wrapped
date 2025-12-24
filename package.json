@@ -7,7 +7,8 @@
     "collect": "node src/collector.js",
     "generate": "node src/generator.js",
     "demo": "node src/demo.js",
-    "wrapped": "node src/wrapped.js"
+    "wrapped": "node src/wrapped.js",
+    "real": "node src/realWrapped.js"
   },
   "keywords": [
     "claude",

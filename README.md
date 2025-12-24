@@ -25,26 +25,51 @@ cd claude-code-wrapped
 npm install
 ```
 
+### Generate YOUR Real Wrapped
+
+Generate wrapped from your actual Claude Code usage:
+
+```bash
+npm run real
+```
+
+This will:
+1. Parse your Claude Code session logs from `~/.claude/projects/`
+2. Extract real usage statistics
+3. Display your wrapped in the terminal
+4. Create an HTML visualization in `./output/wrapped_2025.html`
+
+Open the HTML file in your browser to see the full interactive experience!
+
 ### Try the Demo
 
-Generate sample data and see your wrapped:
+Want to see what it looks like with sample data first?
 
 ```bash
 npm run demo
 ```
 
-This will:
-1. Generate 50-150 random coding sessions
-2. Display your wrapped in the terminal
-3. Create an HTML visualization in `./output/wrapped_2024.html`
-
-Open the HTML file in your browser to see the full interactive experience!
+This will generate 50-150 random coding sessions and show you a demo wrapped.
 
 ## 📖 Usage
 
-### Recording Sessions
+### Using Real Claude Code Data (Recommended!)
 
-To track your actual Claude Code usage, integrate the data collector into your workflow:
+The easiest way to get your wrapped is to use your actual Claude Code session data:
+
+```bash
+# Generate wrapped for current year
+npm run real
+
+# Generate for specific year
+node src/realWrapped.js 2024
+```
+
+This automatically parses your Claude Code logs stored in `~/.claude/projects/` and generates statistics from your actual usage!
+
+### Using Manual Data Collection (Alternative)
+
+To manually track sessions and customize data collection, integrate the data collector into your workflow:
 
 ```javascript
 const DataCollector = require('./src/collector');
